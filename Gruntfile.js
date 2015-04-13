@@ -7,23 +7,36 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
 
+    //
     browserify: {
       main: {
         src: 'public/js/main.js',
         dest: 'public/build/bundle.js',
         files: {
-          'public/build/bundle.js': ['**/*.js'],
+          'public/build/bundle.js': ['**/public/js/*.js'],
         },
         options: {
           transform: ['brfs']
         }
+      },
+      dev: {
+        src: 'public/js/main.js',
+        dest: 'public/build/bundle.js',
+        files: {
+          'public/build/bundle.js': ['**/public/js/*.js'],
+        },
+        options: {
+          transform: ['brfs'],
+          browserifyOptions: { debug: true }
+        }
       }
     },
 
+    //
     watch: {
       everything: {
         files: ['**/*.html','**/js/*.js'],
-        tasks: ['browserify'],
+        tasks: ['browserify:dev'],
         options: {
           livereload: {
             port: 9000,

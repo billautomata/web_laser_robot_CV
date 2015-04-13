@@ -4,8 +4,11 @@ run `npm install` to install express
 
 then `npm run create_keys` to create the `.key` and `.cert` file
 
-You can just slam the enter key a bunch through all the prompts.  _If you want the green icon, make sure to enter `localhost` when asked for the
+You can just slam the enter key a bunch through all the prompts.  
+
+_If you want the green icon, make sure to enter `localhost` when asked for the
 common name._
+
 
 ```bash
 $ npm run create_keys

@@ -12,8 +12,8 @@
 
 <body>
 
-  <!-- <video id="webcam" width="640" height="480"></video> -->
-  <video id="webcam" width="560" height="320" src='small.mp4' autoplay loop muted style="display:none;"></video>
+  <video id="webcam" width="640" height="480" style="display: none;"></video>
+  <!-- <video id="webcam" width="560" height="320" src='small.mp4' autoplay loop muted style="display:none;"></video> -->
 
   <div style=" width:640px;height:480px;">
     <canvas id="canvas" width="560" height="320"></canvas>
@@ -25,6 +25,11 @@
 </body>
 
 <script>console.log(Date.now())</script>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  window.socket = io.connect(window.location.origin)
+</script>
 
 <script type='text/javascript' src='build/bundle.js'></script>
 <script src='https://localhost:9000/livereload.js'></script>
